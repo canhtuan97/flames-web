@@ -109,17 +109,22 @@ const App = () => {
         await activate(connectorsByName.MetaMask);
     };
     const buyNow = async () => {
+        const addressCurrent = '0x0000000000000000000000000000000000000000';
+        let referral = onCheckValueSubmit(valueQueryUrl, inputValue, addressCurrent);
+        if (referral.toLowerCase() === account.toLowerCase()) {
+            referral = "0x0000000000000000000000000000000000000000";
+        }
 
         if (Number(amountBuyTokenInput) < 0.01) {
             return toast.warn("Amount bnb must be greater than 0.01", {});
         }
         setLoadingBuyToken(true);
         await write(
-            "buyToken",
+            "buy",
             library.provider,
-            PRE_SALE, // env
-            PRE_SALE_ABI,
-            [],
+            BSC_APP_TOKEN, // env
+            TOKEN_ABI,
+            [referral],
             {from: account, value: web3.utils.toWei(amountBuyTokenInput.toString())},
         ).then(async (res) => {
             setLoadingBuyToken(false);
