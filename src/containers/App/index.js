@@ -109,6 +109,9 @@ const App = () => {
         await activate(connectorsByName.MetaMask);
     };
     const buyNow = async () => {
+        if (Number(BSC_CHAIN_ID) !== Number(chainId)) {
+            return toast.warn("Please switch to binance smart chain network !", {});
+        }
         const addressCurrent = '0x0000000000000000000000000000000000000000';
         let referral = onCheckValueSubmit(valueQueryUrl, inputValue, addressCurrent);
         if (referral.toLowerCase() === account.toLowerCase()) {
@@ -563,7 +566,6 @@ const App = () => {
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Invite everyone to get 100% referral bonus for eachAirdrop.
                             </li>
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Get 30% BNB & 70% FFT per referral.
-                                2
                             </li>
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) There is no limit to the number of referrals you can invite
                             </li>
