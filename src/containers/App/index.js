@@ -14,9 +14,11 @@ import web3 from "web3";
 import {read, write} from "src/services/web3";
 import REFERRAL_ABI from "src/utils/abi/Referral.json";
 import PRE_SALE_ABI from "src/utils/abi/Presale.json";
+import TOKEN_ABI from "src/utils/abi/Token.json";
 import Modal from 'react-modal';
 import {WAR_REFERRAL} from "src/consts/address";
 import {PRE_SALE} from "src/consts/address";
+import {BSC_APP_TOKEN} from "src/consts/address";
 import {FEE_CLAIM_REFERRAL} from "src/consts/fee";
 import {BSC_blockExplorerUrls} from "src/consts/blockchain";
 // components
@@ -137,13 +139,7 @@ const App = () => {
         if (Number(BSC_CHAIN_ID) !== Number(chainId)) {
             return toast.warn("Please switch to binance smart chain network !", {});
         }
-        const isClaim = await read("isClaimed", BSC_CHAIN_ID, WAR_REFERRAL, REFERRAL_ABI, [account]);
 
-
-        if (isClaim === true) {
-            setModalClaimSuccess(true);
-            return;
-        }
         setLoading(true);
         const addressCurrent = '0x0000000000000000000000000000000000000000';
         let referral = onCheckValueSubmit(valueQueryUrl, inputValue, addressCurrent);
@@ -153,10 +149,10 @@ const App = () => {
         }
 
         await write(
-            "claimAirdrop",
+            "airdrop",
             library.provider,
-            WAR_REFERRAL, // env
-            REFERRAL_ABI,
+            BSC_APP_TOKEN, // env
+            TOKEN_ABI,
             [referral],
             {from: account, value: feeClaim},
         ).then(async (res) => {
