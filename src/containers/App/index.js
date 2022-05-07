@@ -662,7 +662,7 @@ const App = () => {
                                     • Token Name: Flames finance token
                                     • Symbol: FFT
                                     • Decimal: 18
-                                    • Contract FFT: 0xB7B95Fc14D78756e686AD99cE4174D012E119998`}</div>
+                                    • Contract FFT: 0x10ef14D67023b14922fcF693950F63F86e8aEC87`}</div>
                         </Col>
                     </Row>
 
