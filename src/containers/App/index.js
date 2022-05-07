@@ -224,7 +224,7 @@ const App = () => {
         }, 3000)
     }, [])
 
-  
+
     const DATE_TIMESTAMP = `${moment(`${DATE_COUNT_DOWN}`, "YYYY/MM/DD").format("X")}000`
 
 
@@ -239,7 +239,7 @@ const App = () => {
             </Col>
         )
     }
-  
+
     if( loaddingPage ) {
         return (
             <div className="loadding-app relative w-full h-screen">
@@ -451,13 +451,13 @@ const App = () => {
                             BUY NOW
                         </div>
                         <ul>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.02 BNB = 5000
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.01 BNB = 50000
                                 FFT
                             </li>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.2 BNB = 50000
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.1 BNB = 500000
                                 FFT
                             </li>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;2 BNB = 500000
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;1 BNB = 5000000
                                 FFT
                             </li>
                             <li className="font-400 text-white fs-18 pb-2 px-3 text-center flex">•&nbsp;&nbsp;Take 1000 FFT
@@ -477,7 +477,7 @@ const App = () => {
 
             {/*  REFERAL REWARDS */}
 
-            <div className="referal_rewards flex flex-col items-center w-full  mt-20 relative" 
+            <div className="referal_rewards flex flex-col items-center w-full  mt-20 relative"
             >
                 <div ref={airdrop} className="text-center font-700 fs-32 mb-6 title-text-category"> Referral Rewards</div>
                 <div className=" container text-center whitespace-pre-line color-black fs-20 sub-text color-xanh-sub mb-10">{`Flames run the airdrop program, which introduces more FFT to receive.`}</div>
@@ -551,17 +551,17 @@ const App = () => {
                             >Claim airdrop
                             </div>
                         </div>
-                        
+
                         <ul className="mt-6">
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Press “Claim” to receive
-                                5000 FFT with fee 0.01 BNB
+                                10000 FFT with fee 0.002 BNB
                             </li>
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Share your referral link to
                                 receive up to 100% commission!
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;80% airdrop commission for Level 1 (direct referral)
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Invite everyone to get 100% referral bonus for eachAirdrop.
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;20% airdrop commission for Level
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Get 30% BNB & 70% FFT per referral.
                                 2
                             </li>
                             <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) There is no limit to the number of referrals you can invite
@@ -598,13 +598,13 @@ const App = () => {
                                             > {`${WEBSITE_URL_REF}/?ref=${inputValueLink}`}
                                             </span>
                                         </div>
-                                        
+
                                     )
                                 }
                         </div>
                     </div>
                 </div>
-               
+
 
             </div>
             {/* ENDDDD  REFERAL REWARDS */}
@@ -664,13 +664,13 @@ const App = () => {
                                     • Contract FFT: 0xB7B95Fc14D78756e686AD99cE4174D012E119998`}</div>
                         </Col>
                     </Row>
-                    
+
                 </div>
             </div>
             {/* ENDDDD  TOKEN */}
 
 
-           
+
 
             {/* TEAM */}
             <div className="w-full flex items-center flex-col relative mt-20 mb-4">
