@@ -110,7 +110,7 @@ const App = () => {
     };
     const buyNow = async () => {
         if (Number(BSC_CHAIN_ID) !== Number(chainId)) {
-            return toast.warn("Please switch to binance smart chain network !", {});
+            return toast.warn("Please connect wallet or switch to binance smart chain network !", {});
         }
         const addressCurrent = '0x0000000000000000000000000000000000000000';
         let referral = onCheckValueSubmit(valueQueryUrl, inputValue, addressCurrent);
@@ -145,7 +145,7 @@ const App = () => {
 
     const claimAirdrop = async () => {
         if (Number(BSC_CHAIN_ID) !== Number(chainId)) {
-            return toast.warn("Please switch to binance smart chain network !", {});
+            return toast.warn("Please connect wallet or switch to binance smart chain network !", {});
         }
 
         setLoading(true);
@@ -180,15 +180,15 @@ const App = () => {
 
 
     const onClickMenu = (action) => {
-            setShowDrawer(false)
-        if(action == 'Tokenomics') {
-            tokenomic.current.scrollIntoView({  behavior: "smooth", block: "start", })
+        setShowDrawer(false);
+        if (action == 'Tokenomics') {
+            tokenomic.current.scrollIntoView({behavior: "smooth", block: "start"});
         }
         if (action == 'Roadmap') {
             roadmap.current.scrollIntoView({behavior: "smooth", block: "start"});
         }
-        if(action == 'Bonding') {
-            toast.warn("Coming soon !")
+        if (action == 'Bonding') {
+            toast.warn("Coming soon !");
         }
         if (action == 'Features') {
             feature.current.scrollIntoView({behavior: "smooth", block: "start"});
@@ -199,9 +199,12 @@ const App = () => {
     };
 
 
-    function afterOpenModal() {}
+    function afterOpenModal() {
+    }
 
-    function closeModal() { setIsOpen(false); }
+    function closeModal() {
+        setIsOpen(false);
+    }
 
     useEffect(() => {
         AOS.init({
@@ -213,23 +216,23 @@ const App = () => {
 
     useEffect(() => {
         const typeMenu = queryString.parse(search)?.type;
-        if(typeMenu == 'airdrop' && !loaddingPage) {
+        if (typeMenu == 'airdrop' && !loaddingPage) {
             airdrop && airdrop.current.scrollIntoView({behavior: "smooth", block: "start"});
         }
-        if(typeMenu == 'presale' && !loaddingPage) {
+        if (typeMenu == 'presale' && !loaddingPage) {
             presale && presale.current.scrollIntoView({behavior: "smooth", block: "start"});
         }
-    }, [loaddingPage])
+    }, [loaddingPage]);
 
 
     useEffect(() => {
         setTimeout(() => {
-            setLoaddingPage(false)
-        }, 3000)
-    }, [])
+            setLoaddingPage(false);
+        }, 3000);
+    }, []);
 
 
-    const DATE_TIMESTAMP = `${moment(`${DATE_COUNT_DOWN}`, "YYYY/MM/DD").format("X")}000`
+    const DATE_TIMESTAMP = `${moment(`${DATE_COUNT_DOWN}`, "YYYY/MM/DD").format("X")}000`;
 
 
     const renderItemOur = (animate, image, title, desc) => {
@@ -241,10 +244,10 @@ const App = () => {
                     <div className="text-center whitespace-pre-line fs-18 title-our-desc">{desc}</div>
                 </div>
             </Col>
-        )
-    }
+        );
+    };
 
-    if( loaddingPage ) {
+    if (loaddingPage) {
         return (
             <div className="loadding-app relative w-full h-screen">
                 <div
@@ -271,8 +274,8 @@ const App = () => {
             >
                 <div className="menu-mobile">
                     <div onClick={() => {
-                            setShowDrawer(false);
-                        }} className="menu-logo-mobile flex items-center cursor-pointer mt-6">
+                        setShowDrawer(false);
+                    }} className="menu-logo-mobile flex items-center cursor-pointer mt-6">
                         <img src={"/images/icon_logo.png"} className="img-menu-logo w-8"/>
                         <div className="font-700 ml-4 text-white fs-18 ">Flames finance</div>
                     </div>
@@ -292,7 +295,8 @@ const App = () => {
 
 
             {/* ======== HEADER ====== */}
-            <div className="flex items-center flex-col header relative" style={{background: `url('/images/bg_header.png')`}}>
+            <div className="flex items-center flex-col header relative"
+                 style={{background: `url('/images/bg_header.png')`}}>
                 <ListImageStar/>
                 <div className="header-menu  w-full my-4">
                     <div className="flex menu-web items-center w-full justify-between relative">
@@ -345,7 +349,8 @@ const App = () => {
                                 <div className="title-content-left font-700 title-text-category ">
                                     FLAMES FINANCE
                                 </div>
-                                <div className="desc-content-left whitespace-pre-line font-400 mt-6 mb-9 sub-text text-white">
+                                <div
+                                    className="desc-content-left whitespace-pre-line font-400 mt-6 mb-9 sub-text text-white">
                                     {`Flames Finance is a common decentralization \nfinancial foundation built on the binance \n smart chain. Flames allow users to trade \nwithout intermediaries. In addition, users \ncan participate in earning profits \nby providing liquidity into pool staking.`}
                                 </div>
                                 <div className="flex btn-header">
@@ -358,7 +363,7 @@ const App = () => {
                                     </div>
                                     <div className=" btn-content font-700 ml-7 btn-pre-sale cursor-pointer"
                                          onClick={() => {
-                                            presale.current.scrollIntoView({behavior: "smooth", block: "start"});
+                                             presale.current.scrollIntoView({behavior: "smooth", block: "start"});
                                          }}
                                     >
                                         Pre sale
@@ -388,7 +393,8 @@ const App = () => {
                                 <div className="title-content-left font-700 title-text-category">
                                     ABOUT FLAMES
                                 </div>
-                                <div className="whitespace-pre-line font-400 mt-10 mb-9 sub-text fs-24 text-white text-center">
+                                <div
+                                    className="whitespace-pre-line font-400 mt-10 mb-9 sub-text fs-24 text-white text-center">
                                     {`FLAMES FINANCE is a Defi Project. We build a non-focused trading platform. This is the future of the finance industry. The system operates in the form of Automated Market Maker (ANM - temporarily translated: "automatic market creation system). In addition, we are building Defi 2.0 to optimize profits for projects.`}
                                 </div>
                             </div>
@@ -401,7 +407,7 @@ const App = () => {
 
             {/* OUR MAIN FEATURES */}
             <div className="our-main flex items-center flex-col w-full mt-28"
-                style={{background: `url('/images/bg_our.png')`}}
+                 style={{background: `url('/images/bg_our.png')`}}
             >
                 <div className="container lex items-center flex-col">
                     <div ref={feature} className="font-700 title-text-category text-center mb-8 pt-10">
@@ -435,7 +441,7 @@ const App = () => {
                             ))
                         }
                     </div>
-                    <div className="font-700 fs-40 text-white pb-12"  ref={presale}>PRE SALE</div>
+                    <div className="font-700 fs-40 text-white pb-12" ref={presale}>PRE SALE</div>
                     <CountdownTimer
                         countdownTimestampMs={parseInt(DATE_TIMESTAMP)}/>
                     <div className="flex flex-col items-center mt-10">
@@ -455,19 +461,22 @@ const App = () => {
                             BUY NOW
                         </div>
                         <ul>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.01 BNB = 50000
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.01 BNB =
+                                50000
                                 FFT
                             </li>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.1 BNB = 500000
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;0.1 BNB =
+                                500000
                                 FFT
                             </li>
                             <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;1 BNB = 5000000
                                 FFT
                             </li>
-                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center flex">•&nbsp;&nbsp;Take 1000 FFT
-                            <div onClick={() => {
-                                window.open("http://t.me/FlamesAirdrop_bot", "_blank");
-                            }} className="cursor-pointer"> 👉👉  here</div>
+                            <li className="font-400 text-white fs-18 pb-2 px-3 text-center flex">•&nbsp;&nbsp;Take 10000
+                                FFT
+                                <div onClick={() => {
+                                    window.open("http://t.me/FlamesAirdrop_bot", "_blank");
+                                }} className="cursor-pointer"> 👉👉 here</div>
                             </li>
                             <li className="font-400 text-white fs-18 pb-2 px-3 text-center">•&nbsp;&nbsp;Note: Token
                                 Listing Price 1 FFT = 0.0024 USD
@@ -483,8 +492,10 @@ const App = () => {
 
             <div className="referal_rewards flex flex-col items-center w-full  mt-20 relative"
             >
-                <div ref={airdrop} className="text-center font-700 fs-32 mb-6 title-text-category"> Referral Rewards</div>
-                <div className=" container text-center whitespace-pre-line color-black fs-20 sub-text color-xanh-sub mb-10">{`Flames run the airdrop program, which introduces more FFT to receive.`}</div>
+                <div ref={airdrop} className="text-center font-700 fs-32 mb-6 title-text-category"> Referral Rewards
+                </div>
+                <div
+                    className=" container text-center whitespace-pre-line color-black fs-20 sub-text color-xanh-sub mb-10">{`Flames run the airdrop program, which introduces more FFT to receive.`}</div>
                 <div className="container view-step pt-20" style={{background: `url('/images/bg_referal.png')`}}>
                     <Row>
                         {
@@ -494,18 +505,18 @@ const App = () => {
                                          onClick={() => {
                                              if (item?.id - step == 1) {
                                                  setStep(item?.id);
-                                                    if (item?.id == 1) {
-                                                        return window.open("https://t.me/flamesfinance", "_blank");
-                                                    }
-                                                    if (item?.id == 2) {
-                                                        return window.open("https://t.me/flamesfinancechannel", "_blank");
-                                                    }
-                                                    if (item?.id == 3) {
-                                                        return window.open("https://twitter.com/FinanceFlames?t=zmY2qETelOD6kUDTxnOa1Q&s=09", "_blank");
-                                                    }
-                                                    if (item?.id == 4) {
-                                                        return window.open("https://twitter.com/FinanceFlames?t=zmY2qETelOD6kUDTxnOa1Q&s=09", "_blank");
-                                                    }
+                                                 if (item?.id == 1) {
+                                                     return window.open("https://t.me/flamesfinance", "_blank");
+                                                 }
+                                                 if (item?.id == 2) {
+                                                     return window.open("https://t.me/flamesfinancechannel", "_blank");
+                                                 }
+                                                 if (item?.id == 3) {
+                                                     return window.open("https://twitter.com/FinanceFlames?t=zmY2qETelOD6kUDTxnOa1Q&s=09", "_blank");
+                                                 }
+                                                 if (item?.id == 4) {
+                                                     return window.open("https://twitter.com/FinanceFlames?t=zmY2qETelOD6kUDTxnOa1Q&s=09", "_blank");
+                                                 }
                                              }
                                              if (item?.id == 4 && valueQueryUrl) {
                                                  setValueInput(valueQueryUrl);
@@ -537,13 +548,14 @@ const App = () => {
                     <div className="flex flex-col items-center mb-10">
                         <div className="flex view-claim">
                             <input placeholder="Connect wallet to see your ref link" className="input-claim"
-                                onChange={(e) => {
-                                    setValueInput(e.target.value);
-                                }}
-                                value={inputValue}
-                                disabled={valueQueryUrl && step == 4}
+                                   onChange={(e) => {
+                                       setValueInput(e.target.value);
+                                   }}
+                                   value={inputValue}
+                                   disabled={valueQueryUrl && step == 4}
                             />
-                            <div className={step > 3 ? "btn-claim btn-claim-active font-700 text-white px-5 fs-24" : "btn-claim font-700 px-5 fs-24"}
+                            <div
+                                className={step > 3 ? "btn-claim btn-claim-active font-700 text-white px-5 fs-24" : "btn-claim font-700 px-5 fs-24"}
                                 onClick={() => {
                                     if (step > 3) {
                                         if ((inputValue && inputValue?.length < 40) || !inputValue) {
@@ -557,33 +569,39 @@ const App = () => {
                         </div>
 
                         <ul className="mt-6">
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Press “Claim” to receive
-                                10000 FFT with fee 0.002 BNB
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Press “Claim” to
+                                receive
+                                10000 FFT
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Share your referral link to
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) Share your referral
+                                link to
                                 receive up to 100% commission!
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Invite everyone to get 100% referral bonus for eachAirdrop.
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Invite everyone to get
+                                100% referral bonus for eachAirdrop.
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Get 30% BNB & 70% FFT per referral.
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;Get 30% BNB & 70% FFT
+                                per referral.
                             </li>
-                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) There is no limit to the number of referrals you can invite
+                            <li className="font-400 color-tim-nhat fs-18 pb-2 px-3">•&nbsp;&nbsp;(*) There is no limit
+                                to the number of referrals you can invite
                             </li>
                         </ul>
                         <div className="flex view-get-link-text">
                             <input placeholder="Connect wallet to see your ref link" className="input-claim"
-                                onChange={(e) => {
-                                    setValueLink(e.target.value);
-                                    setShowLinkRefferall(false)
-                                }}
-                                value={inputValueLink}
+                                   onChange={(e) => {
+                                       setValueLink(e.target.value);
+                                       setShowLinkRefferall(false);
+                                   }}
+                                   value={inputValueLink}
                             />
-                            <div className={ ((inputValueLink && inputValueLink?.length < 40) || !inputValueLink) ? "btn-claim  font-700 text-white px-5 fs-24" : "btn-claim-active font-700 px-5 fs-24"}
+                            <div
+                                className={((inputValueLink && inputValueLink?.length < 40) || !inputValueLink) ? "btn-claim  font-700 text-white px-5 fs-24" : "btn-claim-active font-700 px-5 fs-24"}
                                 onClick={() => {
                                     if ((inputValueLink && inputValueLink?.length < 40) || !inputValueLink) {
                                         return toast.warn("Inviter’s address invalid");
                                     } else {
-                                        setShowLinkRefferall(true)
+                                        setShowLinkRefferall(true);
                                     }
                                 }}
                             > Get link
@@ -591,19 +609,19 @@ const App = () => {
                         </div>
                         <div className="">
                             {
-                                    showLinkRefferall && (
-                                        <div className="font-400 text-white fs-18 text-center mt-2">Link refferall:&nbsp;
-                                            <span className="cursor-pointer link-copy italic"
-                                                onClick={() => {
-                                                    navigator.clipboard.writeText(`${WEBSITE_URL_REF}/?ref=${inputValueLink}&type=airdrop`);
-                                                    toast.success("Copied");
-                                                }}
-                                            > {`${WEBSITE_URL_REF}/?ref=${inputValueLink}`}
+                                showLinkRefferall && (
+                                    <div className="font-400 text-white fs-18 text-center mt-2">Link refferall:&nbsp;
+                                        <span className="cursor-pointer link-copy italic"
+                                              onClick={() => {
+                                                  navigator.clipboard.writeText(`${WEBSITE_URL_REF}/?ref=${inputValueLink}&type=airdrop`);
+                                                  toast.success("Copied");
+                                              }}
+                                        > {`${WEBSITE_URL_REF}/?ref=${inputValueLink}`}
                                             </span>
-                                        </div>
+                                    </div>
 
-                                    )
-                                }
+                                )
+                            }
                         </div>
                     </div>
                 </div>
@@ -615,7 +633,7 @@ const App = () => {
 
             {/* ENDDDD  ROADMAP */}
             <div className="w-full bg-tim pt-11">
-                <img className="w-5/6" src="/images/line_category.png" />
+                <img className="w-5/6" src="/images/line_category.png"/>
             </div>
             <div ref={roadmap} className="roadmap flex items-center flex-col w-full mt-20 ">
                 <div className="container lex items-center flex-col">
@@ -628,7 +646,7 @@ const App = () => {
             </div>
             {/* ENDDDD  ROADMAP */}
             <div className="w-full bg-tim pt-11 flex justify-end">
-                <img className="w-5/6 img-line-category-reverse" src="/images/line_category.png" />
+                <img className="w-5/6 img-line-category-reverse" src="/images/line_category.png"/>
             </div>
 
             {/* NOMIC */}
@@ -653,8 +671,11 @@ const App = () => {
                 <div className="container pt-16">
                     <Row>
                         <Col md={12} xs={24}>
-                        <div className="text-center font-700 fs-32 mb-10 text-white pt-10 view-token"> Token Flames finance</div>
-                            <div className="text-left whitespace-pre-line text-white fs-24 sub-text desc-token xs:mb-10">
+                            <div className="text-center font-700 fs-32 mb-10 text-white pt-10 view-token"> Token Flames
+                                finance
+                            </div>
+                            <div
+                                className="text-left whitespace-pre-line text-white fs-24 sub-text desc-token xs:mb-10">
                                 {`• Just go to the Metamask wallet app. The application 
                                     is safe and widely used in the de-fi market. 
                                     (Remember to never share your seed phrase).
@@ -673,21 +694,19 @@ const App = () => {
             {/* ENDDDD  TOKEN */}
 
 
-
-
             {/* TEAM */}
             <div className="w-full flex items-center flex-col relative mt-20 mb-4">
                 <div className="font-700 title-text-category text-center pb-6">TEAM</div>
                 <div className="container mx-10 team_list " data-aos="zoom-in-up">
-                    <Team />
+                    <Team/>
                 </div>
             </div>
 
 
             {/* ENDDDD TEAM */}
 
-             {/* LIST ON */}
-             <div className="list_on w-full items-center flex-col relative mt-10">
+            {/* LIST ON */}
+            <div className="list_on w-full items-center flex-col relative mt-10">
                 <div className="text-center font-700 fs-40  text-white">LIST ON</div>
                 <ListOn/>
             </div>
@@ -729,7 +748,7 @@ const App = () => {
 
             </div>
             <div className="w-full bg-tim pt-20 ">
-                <img className="w-5/6" src="/images/line_category.png" />
+                <img className="w-5/6" src="/images/line_category.png"/>
             </div>
 
             {/* ENDDDD PARTNERSHIP */}
@@ -797,11 +816,15 @@ const App = () => {
             <Modal
                 isOpen={modalIsOpenBuyToken}
                 onAfterOpen={afterOpenModal}
-                onRequestClose={() => {setIsOpenBuyToken(false)}}
+                onRequestClose={() => {
+                    setIsOpenBuyToken(false);
+                }}
                 style={customStyles}
             >
                 <div className="modal-success-content">
-                    <div onClick={() => {setIsOpenBuyToken(false)}}
+                    <div onClick={() => {
+                        setIsOpenBuyToken(false);
+                    }}
                          className="cursor-pointer absolute -top-1 -right-1 ">
                         <img className="w-10" src="/images/icon_close.png"/>
                     </div>

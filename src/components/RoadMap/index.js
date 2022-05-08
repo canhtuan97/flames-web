@@ -34,10 +34,10 @@ const RoadMap = ({className}) => {
             postion: 1,
             image: '/images/road_map_left.png',
             descs: [
-                'Airdrop  March 25 👉 May 25, 2022',
-                'Pre sale March 25 👉 May 25, 2022',
-                'Staking earn FFT with APY height on April 15, 2022',
-                'Add liquidity on Pancakeswap on May 26, 2022',
+                'Airdrop  May 8 👉 July 8, 2022',
+                'Pre sale May 8 👉 July 8, 2022',
+                'Staking earn FFT with APY height on July 15, 2022',
+                'Add liquidity on Pancakeswap on July 26, 2022',
             ]
         },
         {
@@ -47,10 +47,10 @@ const RoadMap = ({className}) => {
             postion: 2,
             image: '/images/road_map_right.png',
             descs: [
-                'SmartContract Audit on June 2022',
-                'Bounty & Marketing on June 2022',
-                'Exchange v1 on June 10, 2022',
-                'Defi 2.0(bonding) on June 20, 2022',
+                'SmartContract Audit on August 2022',
+                'Bounty & Marketing on August 2022',
+                'Exchange v1 on August 10, 2022',
+                'Defi 2.0(bonding) on August 20, 2022',
             ]
         },
         {
@@ -60,8 +60,8 @@ const RoadMap = ({className}) => {
             postion: 1,
             image: '/images/road_map_left.png',
             descs: [
-                'Building the NFT Platform on July 2022',
-                'Artists and high-quality projects settled in the platform on July 2022',
+                'Building the NFT Platform on September 2022',
+                'Artists and high-quality projects settled in the platform on September 2022',
                 'Cross chain token bridge Q1 2023'
             ]
         },

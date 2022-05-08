@@ -135,5 +135,5 @@ export const FOLLOW_LIST = [
 ]
 
 export const WEBSITE_URL_REF = 'https://flames.finance'
-export const DATE_COUNT_DOWN = '2022-06-16'
+export const DATE_COUNT_DOWN = '2022-07-08'
 
